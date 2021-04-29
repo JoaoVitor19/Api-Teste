@@ -17,7 +17,7 @@ public class SessoesController {
     public Response tableSessoesDao() {
         SessoesDao sDao = new SessoesDao();
         sDao.tableSessoesDao();
-        return Response.ok(new Gson().toJson("Sessoes Criada")).build();
+        return Response.ok(new Gson().toJson("Sessoes Feitas")).build();
     }
     @GET
     @Produces("application/json")

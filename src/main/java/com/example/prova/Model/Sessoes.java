@@ -48,14 +48,4 @@ public class Sessoes {
     public void setCategoriaFilme(String categoriaFilme) {
         this.categoriaFilme = categoriaFilme;
     }
-
-    @Override
-    public String toString() {
-        return "Sessoes{" +
-                "idSessao=" + idSessao +
-                ", nomeSessao='" + nomeSessao + '\'' +
-                ", qntSessoes=" + qntSessoes +
-                ", categoriaFilme='" + categoriaFilme + '\'' +
-                '}';
-    }
 }

@@ -21,9 +21,7 @@ public class CinemaDao {
         String sql = "CREATE TABLE IF NOT EXISTS cinemas (" +
                 "idCinema INT PRIMARY KEY AUTO_INCREMENT," +
                 "nomeCinema VARCHAR(50) NOT NULL," +
-                "qntSessoes INT," +
-                "CONSTRAINT fk_qntSessoes FOREIGN KEY (qntSessoes)" +
-                "REFERENCES Sessoes(qntSessoes)" +
+                "qntSessoes INT" +
                 ");";
         try {
 
@@ -56,12 +54,7 @@ public class CinemaDao {
                 cinema.setNomeCinema(resultSet.getString("nomeCinema"));
                 cinema.setQntSessoes(resultSet.getInt("qntSessoes"));
 
-                SessoesDao sDao = new SessoesDao();
-                Sessoes sessoes = sDao.listarSessoesId(resultSet.getInt("idSessoes"));
-
-                cinema.setQntSessoes(sessoes);
                 cinemas.add(cinema);
-
             }
             return cinemas;
 

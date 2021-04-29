@@ -1,8 +1,7 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="prova3">
-    <output-path>$PROJECT_DIR$/out/artifacts/prova3</output-path>
+  <artifact type="exploded-war" name="prova2704">
+    <output-path>$PROJECT_DIR$/out/artifacts/prova2704</output-path>
     <root id="root">
-      <element id="artifact" artifact-name="prova3" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="prova" />

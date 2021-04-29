@@ -39,16 +39,4 @@ public class Cinema {
     public void setQntSessoes(int qntSessoes) {
         this.qntSessoes = qntSessoes;
     }
-
-    @Override
-    public String toString() {
-        return "Cinema{" +
-                "idCinema=" + idCinema +
-                ", nomeCinema='" + nomeCinema + '\'' +
-                ", qntSessoes=" + qntSessoes +
-                '}';
-    }
-
-    public void setQntSessoes(Sessoes sessoes) {
-    }
 }

@@ -1,9 +1,7 @@
 package com.example.prova.Dao;
 
 import com.example.prova.Factory.ConnectionFactory;
-import com.example.prova.Model.Cinema;
 import com.example.prova.Model.Sessoes;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,23 +9,24 @@ import java.util.List;
 public class SessoesDao {
 
     private Connection connection;
+
     public SessoesDao() {
         this.connection = new ConnectionFactory().getConnection();
     }
+
     public void tableSessoesDao() {
         String sql = "CREATE TABLE IF NOT EXISTS sessoes (" +
                 "idSessao INT PRIMARY KEY AUTO_INCREMENT," +
                 "nomeSessao VARCHAR(50) NOT NULL," +
                 "qntSessoes INT," +
-                "categoriaFilme VARCHAR(45)," +
-                "CONSTRAINT fk_qntSessoes FOREIGN KEY (qntSessoes)" +
-                "REFERENCES Sessoes(qntSessoes)" +
+                "categoriaFilme VARCHAR(45)" +
                 ");";
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
             stmt.execute();
             stmt.close();
-            System.out.println("Tabela Sessoes Criada");
+            System.out.println("Sessoes Feitas Com Sucesso");
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -52,27 +51,5 @@ public class SessoesDao {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-    }
-    public Sessoes listarSessoesId(int idSessoes) {
-        String sql = "SELECT * FROM sessoes WHERE idSessoes= ?";
-
-        try {
-            PreparedStatement stmt = connection.prepareStatement(sql);
-            stmt.setInt(1, idSessoes);
-
-            ResultSet resultSet = stmt.executeQuery();
-
-            while (resultSet.next()){
-                Sessoes sessoes = new Sessoes();
-                sessoes.setIdSessao(resultSet.getInt("idSessao"));
-                sessoes.setNomeSessao(resultSet.getString("nomeSessao"));
-                sessoes.setQntSessoes(resultSet.getInt("qntSessoes"));
-                sessoes.setCategoriaFilme(resultSet.getString("categoriaFilme"));
-                return sessoes;
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        return null;
     }
 }

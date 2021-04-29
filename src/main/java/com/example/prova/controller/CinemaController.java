@@ -6,7 +6,6 @@ import java.util.List;
 
 import com.example.prova.Dao.*;
 import com.example.prova.Model.Cinema;
-import com.example.prova.Model.Sessoes;
 import com.google.gson.Gson;
 
 @Path("cinema")
@@ -18,7 +17,7 @@ public class CinemaController {
     public Response tabelaCinemaDao() {
         CinemaDao sDao = new CinemaDao();
         sDao.tabelaCinemaDao();
-        return Response.ok(new Gson().toJson("Cinema Criada")).build();
+        return Response.ok(new Gson().toJson("Tabela Cinema Feita")).build();
     }
     @GET
     @Produces("application/json")

@@ -1,4 +1,4 @@
-package com.example.prova.Model;
+package com.example.prova;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
